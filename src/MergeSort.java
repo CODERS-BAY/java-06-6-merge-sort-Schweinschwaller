@@ -15,7 +15,7 @@ public class MergeSort {
         System.out.println("Random Array: ");
         System.out.println(Arrays.toString(arrayRandom));
 
-        arrayRandom = MergeSort(arrayRandom);
+        arrayRandom = mergeSort(arrayRandom);
 
         System.out.println("Sorted Array: ");
         System.out.println(Arrays.toString(arrayRandom));
@@ -60,7 +60,7 @@ public class MergeSort {
         return new int[0];
     }
 
-    public static int[] MergeSort(int[] inputArray) {
+    public static int[] mergeSort(int[] inputArray) {
         if (inputArray.length <= 1) {
             return inputArray;
         }
@@ -75,7 +75,7 @@ public class MergeSort {
         for (int i = leftSize; i < inputArray.length; i++) {
             rightArray[i - leftSize] = inputArray[i];
         }
-        return merge(MergeSort(leftArray), MergeSort(rightArray));
+        return merge(mergeSort(leftArray), mergeSort(rightArray));
     }
 
     public static int[] merge(int[] leftArray, int[] rightArray) {
